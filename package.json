@@ -1,0 +1,13 @@
+{
+  "name": "sharefoundry-mightora-io",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Browser-first SharePoint list and formatting designer",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node tests/core.test.cjs",
+    "check": "npm run build && npm test"
+  },
+  "license": "MIT"
+}

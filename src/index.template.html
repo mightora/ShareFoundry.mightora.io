@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d2438">
+  <meta name="description" content="ShareFoundry by Mightora: free SharePoint list design, Microsoft Graph provisioning JSON and live column formatting previews. Build, shape and improve SharePoint.">
+  <meta name="robots" content="index, follow">
+  <title>ShareFoundry | Free SharePoint List Designer &amp; Formatting Studio | Mightora</title>
+  <link rel="canonical" href="https://sharefoundry.mightora.io/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShareFoundry by Mightora","applicationCategory":"DeveloperApplication","operatingSystem":"Web","url":"https://sharefoundry.mightora.io/","description":"Privacy-first SharePoint list schema and formatting designer.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}</script>
+  <!-- ONLINE_HEAD -->
+  <style>/* APP_CSS */</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <mightora-header id="brand-header" site-name="ShareFoundry" site-url="/" logo-light="https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png" logo-dark="https://raw.githubusercontent.com/mightora/mightora.io/main/static/images/mightoraIoLogo4-200x900.png" nav-links='[{"label":"List Designer","url":"#designer"},{"label":"Formatting Studio","url":"#formatting"},{"label":"Exports","url":"#exports"},{"label":"Mightora.io","url":"https://mightora.io","ext":true}]'>
+    <div class="fallback-header"><a href="#top" class="brand-link"><img src="__LOGO__" alt="Mightora" width="146" height="44"><span>ShareFoundry</span></a><a class="brand-external" href="https://mightora.io" target="_blank" rel="noopener noreferrer">Mightora.io ↗</a></div>
+  </mightora-header>
+  <nav class="quick-jump-nav" aria-label="Toolkit sections">
+    <div class="nav-inner"><span class="nav-caption">WORKSPACE</span><a href="#designer">List designer</a><a href="#formatting">Formatting studio</a><a href="#exports">Export &amp; offline</a><a href="#privacy">Privacy</a><span class="nav-privacy">● Browser-first</span></div>
+  </nav>
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="content hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> SHAREFOUNDRY BY MIGHTORA <span class="eyebrow-line"></span> SHAREPOINT</div>
+          <h1>Make SharePoint<br><em>easier to build.</em></h1>
+          <p>Design lists, shape your data, and create polished views. No complicated setup, no mysterious JSON, and no tenant connection required to get started.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#designer">Start designing <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#formatting">Explore formatting <span aria-hidden="true">→</span></a></div>
+          <div class="hero-trust"><span>✓ Free to use</span><span>✓ Works offline</span><span>✓ Data stays on your device</span></div>
+        </div>
+        <div class="hero-panel" aria-label="Example list preview">
+          <div class="mini-top"><div class="mini-logo">S</div><div><b>Project tracker</b><small>SharePoint list design preview</small></div><span class="mini-dots">•••</span></div>
+          <div class="mini-row mini-head"><span>ITEM</span><span>STATUS</span><span>PRIORITY</span></div>
+          <div class="mini-row"><span>Website refresh</span><span class="mini-pill done">● Done</span><span class="mini-priority">Low</span></div>
+          <div class="mini-row"><span>API integration</span><span class="mini-pill going">● In progress</span><span class="mini-priority">High</span></div>
+          <div class="mini-row"><span>UX review</span><span class="mini-pill queued">● Planned</span><span class="mini-priority">Medium</span></div>
+          <div class="mini-bottom"><span><i></i> LIVE PREVIEW</span><span>DESIGN → EXPORT</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content overview" aria-label="Toolkit capabilities">
+      <div class="feature"><div class="feature-icon">▤</div><div><strong>Visual list designer</strong><span>Structure your data clearly</span></div></div>
+      <div class="feature"><div class="feature-icon">◈</div><div><strong>Formatting studio</strong><span>Preview before copying JSON</span></div></div>
+      <div class="feature"><div class="feature-icon">↓</div><div><strong>Ready-to-use exports</strong><span>Build once, take it with you</span></div></div>
+    </section>
+
+    <section class="content work-section" id="designer">
+      <div class="section-heading"><div><div class="section-kicker">01 / DESIGN</div><h2>SharePoint List Designer</h2><p>Define the structure of your list. We'll turn it into a Microsoft Graph request body and a portable project file.</p></div><span class="section-tag">Local workspace</span></div>
+      <div class="workspace-grid">
+        <div class="panel editing-panel">
+          <div class="panel-title"><h3>List settings</h3><span class="step-pill">STEP 1</span></div>
+          <div class="form-grid"><label>List name<input id="list-name" maxlength="120" value="Project Tracker" required placeholder="e.g. Project Tracker"></label><label>Purpose / description<input id="list-description" maxlength="1000" value="Track delivery work and progress" placeholder="What is this list for?"></label></div>
+          <div class="panel-title columns-heading"><h3>Columns <span class="count-badge" id="column-count">0</span></h3><span class="step-pill">STEP 2</span></div>
+          <p class="muted small">SharePoint creates a Title column automatically. Add the fields you need below.</p>
+          <div id="column-list" class="column-list" aria-live="polite"></div>
+          <form id="add-column-form" class="add-field-form">
+            <strong>+ Add a column</strong>
+            <div class="form-grid two"><label>Display name<input id="new-display" maxlength="120" required placeholder="e.g. Status"></label><label>Field type<select id="new-type"><option value="text">Single line of text</option><option value="choice">Choice</option><option value="number">Number</option><option value="dateTime">Date only</option><option value="boolean">Yes / No</option></select></label></div>
+            <label id="choices-wrap" class="hidden">Choices (comma separated)<input id="new-choices" placeholder="Planned, In progress, Done"></label>
+            <div class="inline-options"><label class="check-line"><input type="checkbox" id="new-required"> Required</label><label class="check-line"><input type="checkbox" id="new-indexed"> Indexed</label><button class="btn btn-secondary" type="submit">Add column <span aria-hidden="true">+</span></button></div>
+          </form>
+        </div>
+        <div class="preview-stack">
+          <div class="panel preview-panel"><div class="panel-title"><h3>Structure preview</h3><span class="live-indicator"><i></i> LIVE</span></div><p class="muted small">A quick view of your fields and data types.</p><div class="table-wrap"><table class="schema-table"><thead><tr><th>Column</th><th>Type</th><th>Options</th></tr></thead><tbody id="schema-body"></tbody></table></div></div>
+          <div class="panel quality-panel"><div class="panel-title"><h3>Design guidance</h3><span class="guide-icon">✦</span></div><div id="warnings" aria-live="polite"></div><p class="fine-print">Guidance is indicative. Always test deployment and access in your own tenant.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content work-section" id="formatting">
+      <div class="section-heading"><div><div class="section-kicker">02 / CUSTOMISE</div><h2>Formatting Studio</h2><p>Choose a formatting pattern, see it in action and take the SharePoint JSON straight into your list.</p></div><span class="section-tag">No code required</span></div>
+      <div class="workspace-grid formatting-grid">
+        <div class="panel editing-panel"><div class="panel-title"><h3>Style your column</h3><span class="step-pill">PRESET BUILDER</span></div>
+          <label>Formatting pattern<select id="preset"><option value="status">Status badges</option><option value="priority">Priority indicators</option><option value="progress">Progress bars</option><option value="link">Useful links</option></select></label>
+          <label class="spaced-label">Accent colour (progress bars and links)<select id="accent"><option value="green">Mightora teal</option><option value="blue">Ocean blue</option><option value="violet">Violet</option><option value="amber">Warm amber</option><option value="rose">Rose</option></select></label>
+          <div class="helper-card"><strong>How to use it</strong><p>Select a pattern, preview its appearance, then copy the JSON. In your SharePoint list choose <b>Column settings → Format this column → Advanced mode</b> and paste it.</p></div>
+        </div>
+        <div class="panel output-panel"><div class="panel-title"><h3>Live preview</h3><span class="live-indicator"><i></i> LIVE</span></div><div class="formatted-preview"><div class="preview-table-head"><span>EXAMPLE FIELD</span><span>FORMATTED VALUE</span></div><div id="format-examples" aria-live="polite"></div></div><div class="code-header"><strong>Generated JSON</strong><span>SharePoint column formatting</span></div><pre class="code-output" id="format-code" tabindex="0"></pre><div class="output-actions"><button id="copy-format" class="btn btn-primary" type="button">Copy JSON <span aria-hidden="true">⧉</span></button><button id="download-format" class="btn btn-ghost" type="button">Download .json ↓</button></div></div>
+      </div>
+    </section>
+
+    <section class="export-band" id="exports"><div class="content"><div class="section-kicker pale">03 / TAKE IT WITH YOU</div><h2>Your design. Your files.</h2><p>Download a portable schema, a provisioning request or your whole workspace. Nothing is sent to a Mightora server.</p><div class="export-grid"><button class="export-card" id="download-graph"><span class="export-glyph">{ }</span><strong>Graph provisioning JSON</strong><small>Create-list request body</small><span class="export-arrow">↗</span></button><button class="export-card" id="download-csv"><span class="export-glyph">▦</span><strong>Column schema CSV</strong><small>For planning and documentation</small><span class="export-arrow">↗</span></button><button class="export-card" id="download-project"><span class="export-glyph">◫</span><strong>Project backup</strong><small>Save and reload your design</small><span class="export-arrow">↗</span></button></div><div class="export-footer"><label class="file-button">↑ Import saved project <input id="import-project" type="file" accept=".json,application/json"></label><button id="reset-project" type="button" class="text-button">Reset to sample ↺</button><span id="export-status" role="status" aria-live="polite"></span></div></div></section>
+
+    <section class="content privacy-section" id="privacy"><div class="privacy-badge">◎</div><div><div class="section-kicker">PRIVACY BY DESIGN</div><h2>Designed to keep your data yours.</h2><p>List definitions and formatting are generated directly in your browser. Your workspace is saved in your browser's local storage for convenience. There is no account, tracking pixel, or application analytics. The online version loads shared Mightora assets from external hosts; the offline edition does not.</p><details><summary>Network transparency &amp; verification</summary><p>Use F12 → Developer Tools → Network → Preserve log, then reload to inspect every request. The browser's Performance Resource Timing view can omit some information, so developer tools or an independent audit are more complete.</p><button class="btn btn-secondary" id="show-resources">Show browser resource hosts</button><p id="resources-output" class="small muted" aria-live="polite"></p></details></div></section>
+
+    <section class="content offline-section"><div><div class="section-kicker">WORK WITHOUT WI-FI</div><h2>Offline Edition <span class="no-net">No Internet Connection Required</span></h2><p>Download a standalone HTML file or ZIP. Open the HTML directly from your computer; all features run locally with no application network requests.</p></div><div class="offline-actions"><a href="./offline/sharepoint-maker-toolkit.html" class="btn btn-secondary" download>Download HTML ↓</a><a href="./offline/sharepoint-maker-toolkit.zip" class="btn btn-outline-dark" download>Download ZIP ↓</a></div></section>
+
+    <section class="content evidence"><span class="evidence-label">BUILD TRANSPARENCY</span><a class="evidence-item" href="https://github.com/mightora/ShareFoundry.mightora.io/actions/workflows/check.yml" target="_blank" rel="noopener noreferrer">◈ Build &amp; tests</a><a class="evidence-item" href="https://github.com/mightora/ShareFoundry.mightora.io/actions/workflows/codeql.yml" target="_blank" rel="noopener noreferrer">◈ CodeQL analysis</a><a class="evidence-item" href="https://github.com/mightora/ShareFoundry.mightora.io/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">◈ MIT licence</a><a class="evidence-item" href="https://github.com/mightora/ShareFoundry.mightora.io" target="_blank" rel="noopener noreferrer">◈ Source repository</a><p>These links point to verifiable workflows and source. A workflow's presence does not imply that its latest run succeeded.</p></section>
+    <mightora-author><div class="author-fallback content"><div class="author-avatar">IT</div><div><strong>Built by TechTweedie</strong><p>Created by <b>Ian Tweedie</b>, a technology architect and community speaker from North East England. Mightora tools are designed to make complex technology more approachable.</p><a href="https://techtweedie.github.io" target="_blank" rel="noopener noreferrer">TechTweedie blog ↗</a></div></div></mightora-author>
+    <mightora-footer><div class="footer-fallback content"><span>© Mightora · ShareFoundry is an independent maker utility, not a Microsoft product.</span><span><a href="https://mightora.io" target="_blank" rel="noopener noreferrer">Mightora</a> · <a href="https://github.com/mightora/ShareFoundry.mightora.io" target="_blank" rel="noopener noreferrer">Source on GitHub</a></span></div></mightora-footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>/* CORE_JS */</script>
+  <script>/* APP_JS */</script>
+  <!-- ONLINE_SCRIPTS -->
+</body>
+</html>
