@@ -48,7 +48,14 @@ test('built editions are self-contained and offline has no remote code requests'
   const offline=fs.readFileSync(path.join(root,'dist/offline/sharepoint-maker-toolkit.html'),'utf8');
   assert.ok(online.includes('mightora-header'));
   assert.ok(online.includes('shared-ui@main'));
+  assert.ok(online.includes('class="author-section-overlay"'));
+  assert.ok(online.includes('class="author-photos"'));
+  assert.ok(online.includes('class="author-avatar"'));
+  assert.ok(!online.includes('class="author-fallback content"'));
   assert.ok(offline.includes('connect-src \'none\''));
+  assert.ok(offline.includes('class="author-avatar author-avatar-placeholder"'));
+  assert.ok(offline.includes('class="author-blog-logo author-brand-placeholder"'));
+  assert.ok(!offline.includes('<img src="https://cdn.jsdelivr.net/gh/mightora/shared-ui@main/'));
   assert.ok(!offline.includes('<script src='));
   assert.ok(!offline.includes('<link rel="stylesheet" href="https:'));
   assert.ok(offline.includes('data:image/png;base64,'));

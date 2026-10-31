@@ -27,7 +27,11 @@ function html(offline) {
     .replace('<!-- ONLINE_SCRIPTS -->', offline ? '' : onlineScripts);
   if (offline) {
     result = result.replace('<meta name="robots" content="index, follow">','<meta name="robots" content="noindex">')
-      .replace('<link rel="canonical" href="https://sharefoundry.mightora.io/">','');
+      .replace('<link rel="canonical" href="https://sharefoundry.mightora.io/">','')
+      .replace(/<img src="https:\/\/cdn\.jsdelivr\.net\/gh\/mightora\/shared-ui@main\/ian-tweedie-sq2\.png"[^>]*>/,
+        '<span class="author-avatar author-avatar-placeholder" aria-label="Ian Tweedie">IT</span>')
+      .replace(/<img src="https:\/\/cdn\.jsdelivr\.net\/gh\/mightora\/shared-ui@main\/main-logo\.png"[^>]*>/,
+        '<span class="author-blog-logo author-brand-placeholder">TechTweedie</span>');
   }
   return result;
 }
